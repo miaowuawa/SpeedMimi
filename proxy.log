@@ -1,0 +1,5 @@
+2025/11/05 00:12:43 Starting proxy server on 0.0.0.0:8080
+2025/11/05 00:12:43 Starting gRPC server on 127.0.0.1:9091
+Management API server listening on 127.0.0.1:9091
+2025/11/05 00:12:45 Shutting down server...
+2025/11/05 00:12:45 Server stopped

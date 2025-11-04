@@ -1,0 +1,413 @@
+2025/11/05 00:19:52 Starting proxy server on 0.0.0.0:8080
+2025/11/05 00:19:52 Starting gRPC server on 127.0.0.1:9091
+Management API server listening on 127.0.0.1:9091
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 2
+[LOADBALANCER] Selected backend: 127.0.0.1:8082 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8082, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8082, after: 1
+[LOADBALANCER] Selected backend: 127.0.0.1:8082 (connections: 1)
+[CONNECTION] Increasing connection for 127.0.0.1:8082, before: 1
+[CONNECTION] Increased connection for 127.0.0.1:8082, after: 2
+[LOADBALANCER] Selected backend: 127.0.0.1:8082 (connections: 1)
+[CONNECTION] Increasing connection for 127.0.0.1:8082, before: 2
+[CONNECTION] Increased connection for 127.0.0.1:8082, after: 3
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 2
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[CONNECTION] Decreasing connection for 127.0.0.1:8082, before: 3
+[CONNECTION] Decreased connection for 127.0.0.1:8082, after: 2
+[CONNECTION] Decreasing connection for 127.0.0.1:8082, before: 2
+[CONNECTION] Decreased connection for 127.0.0.1:8082, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8082, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8082, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[LOADBALANCER] Selected backend: 127.0.0.1:8082 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8082, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8082, after: 1
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 1)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 2
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 2
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 3
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 4
+[LOADBALANCER] Selected backend: 127.0.0.1:8082 (connections: 1)
+[CONNECTION] Increasing connection for 127.0.0.1:8082, before: 1
+[CONNECTION] Increased connection for 127.0.0.1:8082, after: 2
+[LOADBALANCER] Selected backend: 127.0.0.1:8082 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8082, before: 2
+[CONNECTION] Increased connection for 127.0.0.1:8082, after: 3
+[LOADBALANCER] Selected backend: 127.0.0.1:8082 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8082, before: 3
+[CONNECTION] Increased connection for 127.0.0.1:8082, after: 4
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 4
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 5
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 5
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 6
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 6
+[CONNECTION] Decreasing connection for 127.0.0.1:8082, before: 4
+[CONNECTION] Decreased connection for 127.0.0.1:8082, after: 3
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 6
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 4
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 6
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 3
+[CONNECTION] Decreasing connection for 127.0.0.1:8082, before: 4
+[CONNECTION] Decreased connection for 127.0.0.1:8082, after: 2
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 5
+[CONNECTION] Decreasing connection for 127.0.0.1:8082, before: 4
+[CONNECTION] Decreased connection for 127.0.0.1:8082, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 6
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 2
+[LOADBALANCER] Selected backend: 127.0.0.1:8082 (connections: 1)
+[CONNECTION] Increasing connection for 127.0.0.1:8082, before: 1
+[CONNECTION] Increased connection for 127.0.0.1:8082, after: 2
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 5
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 1
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 1)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 2
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 2)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 2
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 3
+[LOADBALANCER] Selected backend: 127.0.0.1:8082 (connections: 2)
+[CONNECTION] Increasing connection for 127.0.0.1:8082, before: 2
+[CONNECTION] Increased connection for 127.0.0.1:8082, after: 3
+[CONNECTION] Decreasing connection for 127.0.0.1:8082, before: 4
+[CONNECTION] Decreased connection for 127.0.0.1:8082, after: 2
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 6
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 2
+[LOADBALANCER] Selected backend: 127.0.0.1:8082 (connections: 2)
+[CONNECTION] Increasing connection for 127.0.0.1:8082, before: 2
+[CONNECTION] Increased connection for 127.0.0.1:8082, after: 3
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 2)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 2
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 3
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 3)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 3
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 4
+[LOADBALANCER] Selected backend: 127.0.0.1:8082 (connections: 3)
+[CONNECTION] Increasing connection for 127.0.0.1:8082, before: 3
+[CONNECTION] Increased connection for 127.0.0.1:8082, after: 4
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 4)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 4
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 5
+[LOADBALANCER] Selected backend: 127.0.0.1:8082 (connections: 4)
+[CONNECTION] Increasing connection for 127.0.0.1:8082, before: 4
+[CONNECTION] Increased connection for 127.0.0.1:8082, after: 5
+[CONNECTION] Decreasing connection for 127.0.0.1:8082, before: 5
+[CONNECTION] Decreased connection for 127.0.0.1:8082, after: 4
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 5
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 5
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 3
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 4
+[CONNECTION] Decreasing connection for 127.0.0.1:8082, before: 5
+[CONNECTION] Decreased connection for 127.0.0.1:8082, after: 3
+[CONNECTION] Decreasing connection for 127.0.0.1:8082, before: 4
+[CONNECTION] Decreasing connection for 127.0.0.1:8082, before: 2
+[CONNECTION] Decreased connection for 127.0.0.1:8082, after: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8082, after: 2
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 3
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 2
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 3
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 3
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[CONNECTION] Decreasing connection for 127.0.0.1:8082, before: 2
+[CONNECTION] Decreased connection for 127.0.0.1:8082, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 2
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 2
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 3
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 3
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 4
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 4
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 5
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 5
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 6
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 6
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 7
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 7
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 8
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 8
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 9
+[LOADBALANCER] Selected backend: 127.0.0.1:8082 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8082, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8082, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 9
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 8
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 8
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 7
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 7
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 7
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 5
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 5
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 4
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 7
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 3
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 6
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 7
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 2
+[CONNECTION] Decreasing connection for 127.0.0.1:8082, before: 1
+[LOADBALANCER] Selected backend: 127.0.0.1:8082 (connections: 1)
+[CONNECTION] Increasing connection for 127.0.0.1:8082, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8082, after: 1
+[LOADBALANCER] Selected backend: 127.0.0.1:8082 (connections: 1)
+[CONNECTION] Increasing connection for 127.0.0.1:8082, before: 1
+[CONNECTION] Increased connection for 127.0.0.1:8082, after: 2
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 2)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 2
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 3
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 5
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 2
+[LOADBALANCER] Selected backend: 127.0.0.1:8082 (connections: 2)
+[CONNECTION] Increasing connection for 127.0.0.1:8082, before: 2
+[CONNECTION] Increased connection for 127.0.0.1:8082, after: 3
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 2)
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 2)
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 5
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 2
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 3
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 2
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 4
+[LOADBALANCER] Selected backend: 127.0.0.1:8082 (connections: 3)
+[CONNECTION] Increasing connection for 127.0.0.1:8082, before: 3
+[CONNECTION] Increased connection for 127.0.0.1:8082, after: 4
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 2)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 3
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 4
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 3
+[CONNECTION] Decreased connection for 127.0.0.1:8082, after: 0
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 4)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 4
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 5
+[LOADBALANCER] Selected backend: 127.0.0.1:8082 (connections: 4)
+[CONNECTION] Increasing connection for 127.0.0.1:8082, before: 4
+[CONNECTION] Increased connection for 127.0.0.1:8082, after: 5
+[CONNECTION] Decreasing connection for 127.0.0.1:8082, before: 5
+[CONNECTION] Decreased connection for 127.0.0.1:8082, after: 4
+[CONNECTION] Decreasing connection for 127.0.0.1:8082, before: 4
+[CONNECTION] Decreased connection for 127.0.0.1:8082, after: 3
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 5
+[CONNECTION] Decreasing connection for 127.0.0.1:8082, before: 3
+[CONNECTION] Decreased connection for 127.0.0.1:8082, after: 2
+[CONNECTION] Decreasing connection for 127.0.0.1:8082, before: 5
+[CONNECTION] Decreased connection for 127.0.0.1:8082, after: 1
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 4
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 5
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 3
+[CONNECTION] Decreasing connection for 127.0.0.1:8082, before: 2
+[CONNECTION] Decreased connection for 127.0.0.1:8082, after: 0
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 5
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 2
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 4
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 1
+[LOADBALANCER] Selected backend: 127.0.0.1:8082 (connections: 0)
+[CONNECTION] Increasing connection for 127.0.0.1:8082, before: 0
+[CONNECTION] Increased connection for 127.0.0.1:8082, after: 1
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 1)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 1
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 2
+[LOADBALANCER] Selected backend: 127.0.0.1:8082 (connections: 1)
+[CONNECTION] Increasing connection for 127.0.0.1:8082, before: 1
+[CONNECTION] Increased connection for 127.0.0.1:8082, after: 2
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 2)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 2
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 3
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 5
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 2
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 2)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 2
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 3
+[LOADBALANCER] Selected backend: 127.0.0.1:8082 (connections: 2)
+[CONNECTION] Increasing connection for 127.0.0.1:8082, before: 2
+[CONNECTION] Increased connection for 127.0.0.1:8082, after: 3
+[LOADBALANCER] Selected backend: 127.0.0.1:8082 (connections: 2)
+[CONNECTION] Increasing connection for 127.0.0.1:8082, before: 3
+[CONNECTION] Increased connection for 127.0.0.1:8082, after: 4
+[LOADBALANCER] Selected backend: 127.0.0.1:8082 (connections: 2)
+[CONNECTION] Increasing connection for 127.0.0.1:8082, before: 4
+[CONNECTION] Increased connection for 127.0.0.1:8082, after: 5
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 3)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 3
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 4
+[LOADBALANCER] Selected backend: 127.0.0.1:8081 (connections: 4)
+[CONNECTION] Increasing connection for 127.0.0.1:8081, before: 4
+[CONNECTION] Increased connection for 127.0.0.1:8081, after: 5
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 5
+[CONNECTION] Decreasing connection for 127.0.0.1:8082, before: 5
+[CONNECTION] Decreased connection for 127.0.0.1:8082, after: 4
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 5
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 3
+[CONNECTION] Decreasing connection for 127.0.0.1:8082, before: 5
+[CONNECTION] Decreased connection for 127.0.0.1:8082, after: 3
+[CONNECTION] Decreasing connection for 127.0.0.1:8082, before: 5
+[CONNECTION] Decreased connection for 127.0.0.1:8082, after: 2
+[CONNECTION] Decreasing connection for 127.0.0.1:8082, before: 5
+[CONNECTION] Decreased connection for 127.0.0.1:8082, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 5
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 2
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 5
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 1
+[CONNECTION] Decreasing connection for 127.0.0.1:8081, before: 5
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 4
+[CONNECTION] Decreased connection for 127.0.0.1:8081, after: 0
+[CONNECTION] Decreasing connection for 127.0.0.1:8082, before: 5
+[CONNECTION] Decreased connection for 127.0.0.1:8082, after: 0
