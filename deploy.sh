@@ -159,3 +159,4 @@ if [ "$ENABLE_PROFILING" = true ]; then
 fi
 echo ""
 echo -e "${YELLOW}注意: 建议在生产环境中运行时使用进程管理器如systemd或supervisor${NC}"
+
