@@ -3,7 +3,7 @@ package types
 import (
 	"context"
 	"crypto/tls"
-	"sync"
+	"sync/atomic"
 	"time"
 )
 
@@ -28,7 +28,7 @@ const (
 	SSE       ProtocolType = "sse"
 )
 
-// Backend 后端服务器信息
+// Backend 后端服务器信息（高并发优化版）
 type Backend struct {
 	ID           string            `yaml:"id" json:"id"`
 	Name         string            `yaml:"name" json:"name"`
@@ -37,12 +37,12 @@ type Backend struct {
 	Weight       int               `yaml:"weight" json:"weight"`
 	Scheme       string            `yaml:"scheme" json:"scheme"`
 	Active       bool              `yaml:"active" json:"active"`
-	Connections  int64             `yaml:"-" json:"connections"`  // 当前连接数
+	Connections  int64             `yaml:"-" json:"connections"`  // 当前连接数（原子操作）
 	MaxConn      int               `yaml:"max_conn" json:"max_conn"`
 	HealthCheck  *HealthCheck      `yaml:"health_check" json:"health_check"`
 	Performance  *PerformanceInfo  `yaml:"-" json:"performance"`
 	LastReport   time.Time         `yaml:"-" json:"last_report"`
-	mu           sync.RWMutex      `yaml:"-" json:"-"`
+	active       int32             `yaml:"-" json:"-"`           // 活跃状态（原子操作）
 }
 
 // PerformanceInfo 性能信息
@@ -156,55 +156,54 @@ type MonitorService interface {
 	ReportPerformance(ctx context.Context, upstream, backendID string, perf *PerformanceInfo) error
 }
 
-// Backend methods
+// 高性能Backend方法（使用原子操作，避免锁竞争）
 func (b *Backend) GetConnections() int64 {
-	b.mu.RLock()
-	defer b.mu.RUnlock()
-	return b.Connections
+	return atomic.LoadInt64(&b.Connections)
 }
 
 func (b *Backend) IncConnections() {
-	b.mu.Lock()
-	defer b.mu.Unlock()
-	b.Connections++
+	atomic.AddInt64(&b.Connections, 1)
 }
 
 func (b *Backend) DecConnections() {
-	b.mu.Lock()
-	defer b.mu.Unlock()
-	if b.Connections > 0 {
-		b.Connections--
+	// 使用CAS操作确保不会减到负数
+	for {
+		current := atomic.LoadInt64(&b.Connections)
+		if current <= 0 {
+			return
+		}
+		if atomic.CompareAndSwapInt64(&b.Connections, current, current-1) {
+			return
+		}
+		// CAS失败，重试
 	}
 }
 
 func (b *Backend) SetConnections(conns int64) {
-	b.mu.Lock()
-	defer b.mu.Unlock()
-	b.Connections = conns
+	atomic.StoreInt64(&b.Connections, conns)
 }
 
 func (b *Backend) IsActive() bool {
-	b.mu.RLock()
-	defer b.mu.RUnlock()
-	return b.Active
+	return atomic.LoadInt32(&b.active) == 1
 }
 
 func (b *Backend) SetActive(active bool) {
-	b.mu.Lock()
-	defer b.mu.Unlock()
+	var val int32
+	if active {
+		val = 1
+	}
+	atomic.StoreInt32(&b.active, val)
+	// 同步更新Active字段用于序列化
 	b.Active = active
 }
 
+// 高并发优化：性能信息直接访问，无锁
 func (b *Backend) UpdatePerformance(perf *PerformanceInfo) {
-	b.mu.Lock()
-	defer b.mu.Unlock()
 	b.Performance = perf
 	b.LastReport = time.Now()
 }
 
 func (b *Backend) GetPerformance() *PerformanceInfo {
-	b.mu.RLock()
-	defer b.mu.RUnlock()
 	return b.Performance
 }
 

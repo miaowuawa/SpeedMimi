@@ -3,9 +3,10 @@ package loadbalancer
 import (
 	"hash/fnv"
 	"math"
+	"math/rand"
 	"net"
 	"sort"
-	"sync"
+	"time"
 
 	"github.com/quqi/speedmimi/pkg/types"
 )
@@ -139,7 +140,27 @@ func (b *LeastConnectionsWeightBalancer) SelectBackend(backends []*types.Backend
 		return candidates[i].score < candidates[j].score
 	})
 
-	return candidates[0].backend
+	// 如果多个后端有相同的得分，随机选择一个
+	minScore := candidates[0].score
+	var sameScoreCandidates []backendScore
+
+	for _, candidate := range candidates {
+		if candidate.score == minScore {
+			sameScoreCandidates = append(sameScoreCandidates, candidate)
+		} else {
+			break // 因为已经排序，后面的一定大于等于minScore
+		}
+	}
+
+	// 在得分相同的后端中随机选择一个
+	if len(sameScoreCandidates) == 1 {
+		return sameScoreCandidates[0].backend
+	}
+
+	// 使用随机数生成器
+	r := rand.New(rand.NewSource(time.Now().UnixNano()))
+	index := r.Intn(len(sameScoreCandidates))
+	return sameScoreCandidates[index].backend
 }
 
 // WeightBalancer 权重负载均衡器
@@ -242,10 +263,9 @@ func (b *PerformanceLCWBalancer) calculateScore(backend *types.Backend) float64 
 	return connectionScore*0.7 + performanceScore*0.3
 }
 
-// Factory 负载均衡器工厂
+// 高性能负载均衡器工厂（无锁设计）
 type Factory struct {
 	balancers map[types.LoadBalancerType]types.LoadBalancer
-	mu        sync.RWMutex
 }
 
 func NewFactory() *Factory {
@@ -253,26 +273,21 @@ func NewFactory() *Factory {
 		balancers: make(map[types.LoadBalancerType]types.LoadBalancer),
 	}
 
-	// 注册所有负载均衡器
-	f.Register(types.IPHash, &IPHashBalancer{})
-	f.Register(types.LeastConnections, &LeastConnectionsBalancer{})
-	f.Register(types.LeastConnectionsWeight, &LeastConnectionsWeightBalancer{})
-	f.Register(types.Weight, &WeightBalancer{})
-	f.Register(types.PerformanceLCW, &PerformanceLCWBalancer{})
+	// 预分配负载均衡器实例，避免运行时分配
+	f.balancers[types.IPHash] = &IPHashBalancer{}
+	f.balancers[types.LeastConnections] = &LeastConnectionsBalancer{}
+	f.balancers[types.LeastConnectionsWeight] = &LeastConnectionsWeightBalancer{}
+	f.balancers[types.Weight] = &WeightBalancer{}
+	f.balancers[types.PerformanceLCW] = &PerformanceLCWBalancer{}
 
 	return f
 }
 
-func (f *Factory) Register(lbType types.LoadBalancerType, balancer types.LoadBalancer) {
-	f.mu.Lock()
-	defer f.mu.Unlock()
-	f.balancers[lbType] = balancer
-}
-
 func (f *Factory) GetBalancer(lbType types.LoadBalancerType) types.LoadBalancer {
-	f.mu.RLock()
-	defer f.mu.RUnlock()
-	return f.balancers[lbType]
+	if balancer, exists := f.balancers[lbType]; exists {
+		return balancer
+	}
+	return f.balancers[types.LeastConnectionsWeight] // 默认使用最少连接数+权重
 }
 
 // GetClientIP 获取客户端真实IP

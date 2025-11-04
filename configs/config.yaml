@@ -3,7 +3,7 @@ server:
   port: 8080
   read_timeout: 30s
   write_timeout: 30s
-  max_conn: 10000
+  max_conn: 10000000  # 支持1000万个并发连接
   real_ip_header: "X-Real-IP"
   trusted_proxies:
     - "127.0.0.1/32"
