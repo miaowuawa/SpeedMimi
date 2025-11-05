@@ -1,0 +1,7 @@
+2025/11/05 01:16:28 Starting proxy server on 0.0.0.0:8080
+2025/11/05 01:16:28 Starting system performance monitoring...
+2025/11/05 01:16:28 Starting pprof server on 0.0.0.0:6060
+2025/11/05 01:16:28 Access pprof at: http://localhost:6060/debug/pprof/
+2025/11/05 01:16:28 Starting management API server on 127.0.0.1:9091
+Management API server listening on 127.0.0.1:9091
+2025/11/05 01:16:28 Failed to start proxy server: listen tcp4 0.0.0.0:8080: bind: address already in use

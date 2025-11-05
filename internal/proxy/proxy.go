@@ -12,6 +12,7 @@ import (
 
 	"github.com/quqi/speedmimi/internal/config"
 	"github.com/quqi/speedmimi/internal/loadbalancer"
+	"github.com/quqi/speedmimi/internal/monitor"
 	"github.com/quqi/speedmimi/pkg/types"
 )
 
@@ -20,6 +21,7 @@ type Server struct {
 	config         *config.Manager
 	lbFactory      *loadbalancer.Factory
 	upstreamMgr    *UpstreamManager
+	monitor        *monitor.PerformanceMonitor
 	server         *fasthttp.Server
 	tlsConfig      *tls.Config
 	mu             sync.RWMutex
@@ -42,11 +44,13 @@ type Upstream struct {
 func NewServer(cfgMgr *config.Manager) (*Server, error) {
 	lbFactory := loadbalancer.NewFactory()
 	upstreamMgr := NewUpstreamManager()
+	perfMonitor := monitor.NewPerformanceMonitor()
 
 	server := &Server{
 		config:      cfgMgr,
 		lbFactory:   lbFactory,
 		upstreamMgr: upstreamMgr,
+		monitor:     perfMonitor,
 	}
 
 	// 初始化上游
@@ -120,11 +124,58 @@ func (s *Server) Start() error {
 
 // Stop 停止服务器
 func (s *Server) Stop() error {
+	if s.monitor != nil {
+		s.monitor.Stop()
+	}
 	return s.server.Shutdown()
+}
+
+// GetMonitor 获取性能监控器
+func (s *Server) GetMonitor() *monitor.PerformanceMonitor {
+	return s.monitor
+}
+
+// DisconnectBackend 异步断开后端连接（标记机制）
+func (s *Server) DisconnectBackend(upstreamID, backendID string) error {
+	upstream := s.upstreamMgr.GetUpstream(upstreamID)
+	if upstream == nil {
+		return fmt.Errorf("upstream %s not found", upstreamID)
+	}
+
+	backends := upstream.GetBackends()
+	for _, backend := range backends {
+		if backend.ID == backendID {
+			// 标记后端为断开状态
+			backend.MarkForDisconnect()
+			fmt.Printf("[DISCONNECT] Backend %s/%s marked for disconnection\n", upstreamID, backendID)
+			return nil
+		}
+	}
+
+	return fmt.Errorf("backend %s not found in upstream %s", backendID, upstreamID)
+}
+
+// GetUpstreamManager 获取上游管理器（用于调试）
+func (s *Server) GetUpstreamManager() *UpstreamManager {
+	return s.upstreamMgr
 }
 
 // handleRequest 处理请求
 func (s *Server) handleRequest(ctx *fasthttp.RequestCtx) {
+	// 轻量级性能监控记录（非阻塞）
+	s.monitor.StartConnection()
+
+	// 使用defer确保连接结束被记录
+	defer func() {
+		// 记录请求完成（异步，非阻塞）
+		if s.monitor != nil {
+			bytesSent := int64(len(ctx.Response.Body()))
+			bytesRecv := int64(len(ctx.Request.Body()))
+			s.monitor.RecordRequest(bytesSent, bytesRecv)
+			s.monitor.EndConnection()
+		}
+	}()
+
 	// 获取路由规则
 	rule := s.findRoutingRule(string(ctx.Path()))
 	if rule == nil {
@@ -156,7 +207,7 @@ func (s *Server) handleRequest(ctx *fasthttp.RequestCtx) {
 	// 选择后端
 	backend := balancer.SelectBackend(backends, ctx)
 	if backend == nil {
-		ctx.Error("Service Unavailable", fasthttp.StatusServiceUnavailable)
+		ctx.Error("Service Unavailable (All backends at connection limit)", fasthttp.StatusServiceUnavailable)
 		return
 	}
 
@@ -331,6 +382,15 @@ func (s *Server) initUpstreams() error {
 	cfg := s.config.GetConfig()
 
 	for name, backends := range cfg.Backends {
+		// 确保backend的原子字段与配置字段同步
+		for _, backend := range backends {
+			if backend.Active {
+				backend.SetActive(true) // 同步原子字段
+			} else {
+				backend.SetActive(false)
+			}
+		}
+
 		upstream, err := s.upstreamMgr.CreateUpstream(name, backends)
 		if err != nil {
 			return fmt.Errorf("failed to create upstream %s: %w", name, err)
@@ -446,7 +506,8 @@ func (u *Upstream) GetBackends() []*types.Backend {
 	// 创建活跃后端列表，避免锁竞争
 	backends := make([]*types.Backend, 0, len(u.backends))
 	for _, backend := range u.backends {
-		if backend.IsActive() {
+		// 检查活跃状态（同时检查原子字段和配置字段）
+		if backend.IsActive() && backend.Active {
 			backends = append(backends, backend)
 		}
 	}

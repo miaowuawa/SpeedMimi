@@ -1,0 +1,8 @@
+2025/11/05 01:06:09 Starting proxy server on 0.0.0.0:8080
+2025/11/05 01:06:09 Starting system performance monitoring...
+2025/11/05 01:06:09 Starting pprof server on 0.0.0.0:6060
+2025/11/05 01:06:09 Access pprof at: http://localhost:6060/debug/pprof/
+2025/11/05 01:06:09 Starting management API server on 127.0.0.1:9091
+Management API server listening on 127.0.0.1:9091
+2025/11/05 01:06:09 Shutting down server...
+2025/11/05 01:06:09 Server stopped

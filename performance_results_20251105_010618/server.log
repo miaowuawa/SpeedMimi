@@ -1,0 +1,163 @@
+2025/11/05 01:06:18 Starting pprof server on 0.0.0.0:6060
+2025/11/05 01:06:18 Access pprof at: http://localhost:6060/debug/pprof/
+2025/11/05 01:06:18 Starting system performance monitoring...
+2025/11/05 01:06:18 Starting management API server on 127.0.0.1:9091
+Management API server listening on 127.0.0.1:9091
+2025/11/05 01:06:18 Starting proxy server on 0.0.0.0:8080
+[PERF REPORT] default/backend-8081: CPU=1.0%, MEM=4.0%
+[PERF REPORT] default/backend-8082: CPU=1.0%, MEM=4.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8081: CPU=3.5%, MEM=14.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8081: CPU=2.5%, MEM=10.0%
+2025/11/05 01:06:28 📊 System Metrics - Goroutines: 1097, Memory: 27.2MB, Heap: 9.8MB, Stack: 6.1MB, GC: 2 (0.25ms)
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8081: CPU=2.5%, MEM=10.0%
+[PERF REPORT] default/backend-8081: CPU=2.5%, MEM=10.0%
+2025/11/05 01:06:38 📊 System Metrics - Goroutines: 1193, Memory: 31.4MB, Heap: 12.4MB, Stack: 7.3MB, GC: 1 (0.09ms)
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8081: CPU=3.0%, MEM=12.0%
+[PERF REPORT] default/backend-8082: CPU=2.5%, MEM=10.0%
+[PERF REPORT] default/backend-8081: CPU=3.0%, MEM=12.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8081: CPU=3.0%, MEM=12.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+2025/11/05 01:06:48 📊 System Metrics - Goroutines: 1303, Memory: 35.4MB, Heap: 15.7MB, Stack: 7.7MB, GC: 0 (0.00ms)
+[PERF REPORT] default/backend-8081: CPU=3.5%, MEM=14.0%
+[PERF REPORT] default/backend-8081: CPU=3.0%, MEM=12.0%
+[PERF REPORT] default/backend-8082: CPU=2.5%, MEM=10.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+2025/11/05 01:06:58 📊 System Metrics - Goroutines: 1366, Memory: 39.4MB, Heap: 17.6MB, Stack: 7.9MB, GC: 0 (0.00ms)
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=2.5%, MEM=10.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+2025/11/05 01:07:08 📊 System Metrics - Goroutines: 1419, Memory: 39.4MB, Heap: 13.7MB, Stack: 8.1MB, GC: 1 (0.05ms)
+[PERF REPORT] default/backend-8082: CPU=3.5%, MEM=14.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8081: CPU=2.5%, MEM=10.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+2025/11/05 01:07:18 📊 System Metrics - Goroutines: 1439, Memory: 39.4MB, Heap: 14.9MB, Stack: 8.0MB, GC: 0 (0.00ms)
+[PERF REPORT] default/backend-8081: CPU=2.5%, MEM=10.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8081: CPU=2.5%, MEM=10.0%
+[PERF REPORT] default/backend-8081: CPU=3.0%, MEM=12.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8081: CPU=3.5%, MEM=14.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+2025/11/05 01:07:28 📊 System Metrics - Goroutines: 1452, Memory: 43.4MB, Heap: 21.7MB, Stack: 8.1MB, GC: 0 (0.00ms)
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=2.5%, MEM=10.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=3.5%, MEM=14.0%
+2025/11/05 01:07:38 📊 System Metrics - Goroutines: 1486, Memory: 43.4MB, Heap: 22.3MB, Stack: 8.2MB, GC: 0 (0.00ms)
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8081: CPU=4.0%, MEM=16.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8081: CPU=2.5%, MEM=10.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+2025/11/05 01:07:48 📊 System Metrics - Goroutines: 1500, Memory: 43.4MB, Heap: 22.8MB, Stack: 8.2MB, GC: 0 (0.00ms)
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8081: CPU=2.5%, MEM=10.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=2.5%, MEM=10.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+2025/11/05 01:07:58 📊 System Metrics - Goroutines: 1513, Memory: 43.4MB, Heap: 23.2MB, Stack: 8.2MB, GC: 0 (0.00ms)
+[PERF REPORT] default/backend-8082: CPU=2.5%, MEM=10.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=3.5%, MEM=14.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=3.0%, MEM=12.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=3.0%, MEM=12.0%
+2025/11/05 01:08:08 📊 System Metrics - Goroutines: 1524, Memory: 43.4MB, Heap: 23.5MB, Stack: 8.2MB, GC: 0 (0.00ms)
+[PERF REPORT] default/backend-8082: CPU=3.5%, MEM=14.0%
+[PERF REPORT] default/backend-8081: CPU=2.5%, MEM=10.0%
+[PERF REPORT] default/backend-8082: CPU=3.5%, MEM=14.0%
+[PERF REPORT] default/backend-8082: CPU=3.0%, MEM=12.0%
+[PERF REPORT] default/backend-8081: CPU=3.5%, MEM=14.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+2025/11/05 01:08:18 📊 System Metrics - Goroutines: 1534, Memory: 43.4MB, Heap: 23.7MB, Stack: 8.3MB, GC: 0 (0.00ms)
+[PERF REPORT] default/backend-8081: CPU=2.5%, MEM=10.0%
+[PERF REPORT] default/backend-8082: CPU=2.5%, MEM=10.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=2.5%, MEM=10.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=3.0%, MEM=12.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=3.0%, MEM=12.0%
+2025/11/05 01:08:28 📊 System Metrics - Goroutines: 1069, Memory: 43.4MB, Heap: 24.1MB, Stack: 8.1MB, GC: 0 (0.00ms)
+[PERF REPORT] default/backend-8082: CPU=2.5%, MEM=10.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=3.0%, MEM=12.0%
+[PERF REPORT] default/backend-8081: CPU=2.5%, MEM=10.0%
+[PERF REPORT] default/backend-8082: CPU=2.5%, MEM=10.0%
+[PERF REPORT] default/backend-8081: CPU=2.5%, MEM=10.0%
+[PERF REPORT] default/backend-8082: CPU=4.0%, MEM=16.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+2025/11/05 01:08:38 📊 System Metrics - Goroutines: 838, Memory: 43.4MB, Heap: 24.2MB, Stack: 7.9MB, GC: 0 (0.00ms)
+[PERF REPORT] default/backend-8082: CPU=3.0%, MEM=12.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=3.0%, MEM=12.0%
+[PERF REPORT] default/backend-8082: CPU=3.5%, MEM=14.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+2025/11/05 01:08:48 📊 System Metrics - Goroutines: 658, Memory: 43.4MB, Heap: 24.3MB, Stack: 7.6MB, GC: 0 (0.00ms)
+[PERF REPORT] default/backend-8082: CPU=3.0%, MEM=12.0%
+[PERF REPORT] default/backend-8082: CPU=3.0%, MEM=12.0%
+[PERF REPORT] default/backend-8081: CPU=2.5%, MEM=10.0%
+[PERF REPORT] default/backend-8081: CPU=4.0%, MEM=16.0%
+[PERF REPORT] default/backend-8081: CPU=4.0%, MEM=16.0%
+2025/11/05 01:08:58 📊 System Metrics - Goroutines: 553, Memory: 43.4MB, Heap: 24.4MB, Stack: 6.5MB, GC: 0 (0.00ms)
+[PERF REPORT] default/backend-8081: CPU=3.0%, MEM=12.0%
+[PERF REPORT] default/backend-8082: CPU=3.0%, MEM=12.0%
+[PERF REPORT] default/backend-8082: CPU=2.5%, MEM=10.0%
+[PERF REPORT] default/backend-8081: CPU=3.0%, MEM=12.0%
+[PERF REPORT] default/backend-8081: CPU=3.0%, MEM=12.0%
+[PERF REPORT] default/backend-8082: CPU=3.5%, MEM=14.0%
+[PERF REPORT] default/backend-8081: CPU=3.0%, MEM=12.0%
+2025/11/05 01:09:08 📊 System Metrics - Goroutines: 457, Memory: 43.4MB, Heap: 8.0MB, Stack: 4.5MB, GC: 1 (0.08ms)
+[PERF REPORT] default/backend-8081: CPU=3.0%, MEM=12.0%
+[PERF REPORT] default/backend-8082: CPU=3.0%, MEM=12.0%
+[PERF REPORT] default/backend-8081: CPU=3.5%, MEM=14.0%
+[PERF REPORT] default/backend-8081: CPU=3.0%, MEM=12.0%
+[PERF REPORT] default/backend-8082: CPU=3.0%, MEM=12.0%
+2025/11/05 01:09:18 📊 System Metrics - Goroutines: 392, Memory: 43.4MB, Heap: 8.1MB, Stack: 4.5MB, GC: 0 (0.00ms)
+[PERF REPORT] default/backend-8082: CPU=4.0%, MEM=16.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=3.5%, MEM=14.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+2025/11/05 01:09:28 📊 System Metrics - Goroutines: 4959, Memory: 68.2MB, Heap: 34.5MB, Stack: 20.9MB, GC: 3 (0.59ms)
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+2025/11/05 01:09:38 📊 System Metrics - Goroutines: 4128, Memory: 68.2MB, Heap: 34.6MB, Stack: 20.9MB, GC: 0 (0.00ms)
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+2025/11/05 01:09:46 Shutting down server...
+2025/11/05 01:09:46 Server stopped

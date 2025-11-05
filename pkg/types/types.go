@@ -43,6 +43,7 @@ type Backend struct {
 	Performance  *PerformanceInfo  `yaml:"-" json:"performance"`
 	LastReport   time.Time         `yaml:"-" json:"last_report"`
 	active       int32             `yaml:"-" json:"-"`           // 活跃状态（原子操作）
+	disconnect   int32             `yaml:"-" json:"-"`           // 断开连接标记（原子操作）
 }
 
 // PerformanceInfo 性能信息
@@ -197,6 +198,18 @@ func (b *Backend) SetActive(active bool) {
 	b.Active = active
 }
 
+func (b *Backend) ShouldDisconnect() bool {
+	return atomic.LoadInt32(&b.disconnect) == 1
+}
+
+func (b *Backend) MarkForDisconnect() {
+	atomic.StoreInt32(&b.disconnect, 1)
+}
+
+func (b *Backend) ClearDisconnectMark() {
+	atomic.StoreInt32(&b.disconnect, 0)
+}
+
 // 高并发优化：性能信息直接访问，无锁
 func (b *Backend) UpdatePerformance(perf *PerformanceInfo) {
 	b.Performance = perf
@@ -228,6 +241,15 @@ func (b *Backend) CalculateUtilization() float64 {
 	}
 
 	return utilization
+}
+
+// IsConnectionLimitReached 检查是否达到连接数限制
+func (b *Backend) IsConnectionLimitReached() bool {
+	if b.MaxConn <= 0 {
+		// MaxConn <= 0 表示无限制
+		return false
+	}
+	return b.GetConnections() >= int64(b.MaxConn)
 }
 
 // TLSConfig TLS配置

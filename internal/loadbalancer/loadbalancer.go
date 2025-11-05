@@ -23,18 +23,30 @@ func (b *IPHashBalancer) SelectBackend(backends []*types.Backend, req interface{
 		return nil
 	}
 
+	// 过滤出未达到连接限制的后端
+	var availableBackends []*types.Backend
+	for _, backend := range backends {
+		if !backend.IsConnectionLimitReached() {
+			availableBackends = append(availableBackends, backend)
+		}
+	}
+
+	if len(availableBackends) == 0 {
+		return nil // 所有后端都达到连接限制
+	}
+
 	// 获取客户端IP
 	clientIP := b.getClientIP(req)
 	if clientIP == "" {
 		// 如果无法获取IP，使用随机选择
-		return b.selectRandom(backends)
+		return b.selectRandom(availableBackends)
 	}
 
 	// 使用IP的hash值选择后端
 	hash := b.hashIP(clientIP)
-	index := int(hash) % len(backends)
+	index := int(hash) % len(availableBackends)
 
-	return backends[index]
+	return availableBackends[index]
 }
 
 func (b *IPHashBalancer) getClientIP(req interface{}) string {
@@ -54,7 +66,7 @@ func (b *IPHashBalancer) selectRandom(backends []*types.Backend) *types.Backend 
 	var selected *types.Backend
 
 	for _, backend := range backends {
-		if !backend.IsActive() {
+		if !backend.IsActive() || backend.ShouldDisconnect() || backend.IsConnectionLimitReached() {
 			continue
 		}
 		if backend.GetConnections() < minConn {
@@ -78,13 +90,22 @@ func (b *LeastConnectionsBalancer) SelectBackend(backends []*types.Backend, req 
 		return nil
 	}
 
+	// 过滤出未达到连接限制的后端
+	var availableBackends []*types.Backend
+	for _, backend := range backends {
+		if backend.IsActive() && !backend.ShouldDisconnect() && !backend.IsConnectionLimitReached() {
+			availableBackends = append(availableBackends, backend)
+		}
+	}
+
+	if len(availableBackends) == 0 {
+		return nil // 所有后端都达到连接限制
+	}
+
 	minConn := int64(math.MaxInt64)
 	var selected *types.Backend
 
-	for _, backend := range backends {
-		if !backend.IsActive() {
-			continue
-		}
+	for _, backend := range availableBackends {
 		if backend.GetConnections() < minConn {
 			minConn = backend.GetConnections()
 			selected = backend
@@ -113,10 +134,9 @@ func (b *LeastConnectionsWeightBalancer) SelectBackend(backends []*types.Backend
 	}
 
 	var candidates []backendScore
-	totalWeight := 0
 
 	for _, backend := range backends {
-		if !backend.IsActive() {
+		if !backend.IsActive() || backend.ShouldDisconnect() || backend.IsConnectionLimitReached() {
 			continue
 		}
 
@@ -124,7 +144,6 @@ func (b *LeastConnectionsWeightBalancer) SelectBackend(backends []*types.Backend
 		if weight <= 0 {
 			weight = 1
 		}
-		totalWeight += weight
 
 		connections := backend.GetConnections()
 		score := float64(connections) / float64(weight)
@@ -132,7 +151,7 @@ func (b *LeastConnectionsWeightBalancer) SelectBackend(backends []*types.Backend
 	}
 
 	if len(candidates) == 0 {
-		return nil
+		return nil // 所有后端都达到连接限制
 	}
 
 	// 选择得分最低的
@@ -175,11 +194,18 @@ func (b *WeightBalancer) SelectBackend(backends []*types.Backend, req interface{
 		return nil
 	}
 
+	// 过滤出未达到连接限制的后端
+	var availableBackends []*types.Backend
 	totalWeight := 0
 	for _, backend := range backends {
-		if backend.IsActive() {
+		if backend.IsActive() && !backend.ShouldDisconnect() && !backend.IsConnectionLimitReached() {
+			availableBackends = append(availableBackends, backend)
 			totalWeight += backend.Weight
 		}
+	}
+
+	if len(availableBackends) == 0 {
+		return nil // 所有后端都达到连接限制
 	}
 
 	if totalWeight == 0 {
@@ -191,18 +217,14 @@ func (b *WeightBalancer) SelectBackend(backends []*types.Backend, req interface{
 	r := 0 // 可以使用随机数或计数器
 	currentWeight := 0
 
-	for _, backend := range backends {
-		if !backend.IsActive() {
-			continue
-		}
-
+	for _, backend := range availableBackends {
 		currentWeight += backend.Weight
 		if r < currentWeight {
 			return backend
 		}
 	}
 
-	return backends[0]
+	return availableBackends[0]
 }
 
 // PerformanceLCWBalancer 性能+最少连接数+权重负载均衡器
@@ -225,7 +247,7 @@ func (b *PerformanceLCWBalancer) SelectBackend(backends []*types.Backend, req in
 	var candidates []backendScore
 
 	for _, backend := range backends {
-		if !backend.IsActive() {
+		if !backend.IsActive() || backend.ShouldDisconnect() || backend.IsConnectionLimitReached() {
 			continue
 		}
 
@@ -235,7 +257,7 @@ func (b *PerformanceLCWBalancer) SelectBackend(backends []*types.Backend, req in
 	}
 
 	if len(candidates) == 0 {
-		return nil
+		return nil // 所有后端都达到连接限制
 	}
 
 	// 选择得分最低的（得分越低越好）

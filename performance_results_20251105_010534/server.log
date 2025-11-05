@@ -1,0 +1,12 @@
+2025/11/05 01:05:35 Starting proxy server on 0.0.0.0:8080
+2025/11/05 01:05:35 Starting management API server on 127.0.0.1:9091
+Management API server listening on 127.0.0.1:9091
+[PERF REPORT] default/backend-8082: CPU=1.0%, MEM=4.0%
+[PERF REPORT] default/backend-8081: CPU=1.0%, MEM=4.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8081: CPU=2.0%, MEM=8.0%
+[PERF REPORT] default/backend-8082: CPU=2.0%, MEM=8.0%
+2025/11/05 01:05:46 Shutting down server...
+2025/11/05 01:05:46 Server stopped
